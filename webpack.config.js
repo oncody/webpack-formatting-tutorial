@@ -2,6 +2,7 @@
 
 const eslintConfig = require('oncody-eslint-config');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: [
@@ -18,12 +19,24 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        exclude: /node_modules/,
-        use: ['html-loader','html-shaper-loader']
+        use: ['html-loader', 'html-shaper-loader']
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          // MiniCssExtractPlugin.loader,
+          'css-loader',
+          // 'postcss-loader'
+        ]
       }
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({template: './index.html'})
+    new HtmlWebpackPlugin({template: './index.html', inject: false}),
+    // new MiniCssExtractPlugin({
+      // filename: 'index.css',
+      // chunkFilename: 'index.css'
+    // })
   ]
 };

@@ -10,13 +10,17 @@
     "build": "webpack"
   },
   "devDependencies": {
+    "css-loader": "latest",
     "eslint": "latest",
     "eslint-loader": "latest",
     "html-loader": "latest",
     "html-shaper": "latest",
     "html-shaper-loader": "latest",
     "html-webpack-plugin": "latest",
+    "mini-css-extract-plugin": "latest",
     "oncody-eslint-config": "latest",
+    "postcss-loader": "latest",
+    "style-loader": "latest",
     "webpack": "latest",
     "webpack-cli": "latest"
   },
